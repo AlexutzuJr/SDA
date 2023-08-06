@@ -18,5 +18,5 @@ void reverse_display(struct node* head)
       }
 
       reverse_display(head->next);
-      printf("%d head->val);
+      printf("%d" head->val);
 }
