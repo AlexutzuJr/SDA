@@ -1,11 +1,27 @@
-/* Să se scrie o funcție care interschimbă elementul din colțul sus-stânga al unei matrice cu elementul din colțul jos-dreapta al aceleași matrice. 
-   Prototipul funcției este: void interchange_corners(int *M, int rows, int cols); */
+/* Să se scrie o funcție care primește ca argumente adresa unei matrice M, numărul de linii (rows) și numărul de coloane (columns) ce creează o clonă a matricei respective într-o nouă zonă de memorie și returnează adresa 
+clonei.
+   Prototipul funcției este: int *clone_matrix_to_p(int *M, int rows, int cols) */
 
 
-void interchange_corners(int *M, int rows, int cols)
-{
-    int copy;
-    copy=M[0];
-    M[0]=M[rows*cols-1];
-    M[rows*cols-1]=copy;
+int *clone_matrix_to_p(int *M, int rows, int cols)
+{	
+	int i;
+	int j;
+
+	//declaram o noua matrice A ca pointer
+	int *A;
+	
+	for(i=0; i<rows; i++)
+   {
+		for(j=0; j<cols; j++)
+      { 
+			//A[i][j] = M[i][j]		
+			*(A+ i*cols + j)= *(M + i*cols+ j);  
+		}
+
+	}
+
+	//returnam adresa matricei
+	return A;
+
 }
