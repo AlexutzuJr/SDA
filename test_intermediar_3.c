@@ -10,15 +10,13 @@
    Funcția are următorul prototip: void reverse_display(struct node *head); */
 
 
-  void reverse_display(struct node* head)
+void reverse_display(struct node* head)
 {
-  if(head==NULL)
-{
-return;
+      if(head==NULL)
+      {
+            return;
+      }
+
+      reverse_display(head->next);
+      printf("%d head->val);
 }
-
-reverse_display(head->next);
-printf("%d head->val);
-  }
-
-  
